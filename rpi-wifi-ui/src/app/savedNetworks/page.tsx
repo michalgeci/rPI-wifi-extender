@@ -79,7 +79,7 @@ export default function SavedNetworks() {
         hide={() => setDialogVisible(false)}
         buttons={[{ label: "Cancel" }, { label: "DELETE", warning: true }]}
       />
-      {networks.map((network, index) => (
+      {networks.map((network) => (
         <SavedNetworkItem
           key={network.name}
           name={network.name}
