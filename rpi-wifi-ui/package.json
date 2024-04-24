@@ -6,10 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "start-static": "npx serve out",
     "lint": "next lint"
   },
   "dependencies": {
-    "antd-mobile": "^5.35.0",
+    "@headlessui/react": "^1.7.19",
     "next": "14.2.2",
     "react": "^18",
     "react-dom": "^18",
@@ -22,5 +23,10 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.2",
     "typescript": "^5"
-  }
+  },
+  "browserslist": [
+    ">0.3%",
+    "not dead",
+    "not op_mini all"
+  ]
 }

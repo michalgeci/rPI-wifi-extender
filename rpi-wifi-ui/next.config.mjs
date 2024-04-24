@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  
   output: 'export',  // static export to serve via Flask
   rewrites: async () => {
     return [
