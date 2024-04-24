@@ -3,7 +3,6 @@ import "antd-mobile/bundle/css-vars-patch.css"
 import "antd-mobile/bundle/style.css"
 import "./globals.css";
 import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,7 +18,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />
         <div className="mainContainer">
           {children}
         </div>
