@@ -16,6 +16,7 @@ body {
 
 .scrollable {
   overflow: scroll;
+  outline: none;
 }
 
 .mainContainer {
@@ -25,7 +26,6 @@ body {
   align-items: center;
   flex: 1;
   overflow: hidden;
-  outline: none;
 }
 
 .deleteButton {
