@@ -61,23 +61,30 @@ export default function SavedNetworks() {
   ];
 
   const [dialogVisible, setDialogVisible] = useState(false);
+  const [networkSsid, setNetworkSsid] = useState("");
   const [networkName, setNetworkName] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const onClick = (name: string, ssid: string) => {
-    setNetworkName(ssid);
+    setNetworkName(name);
+    setNetworkSsid(ssid)
     setDialogVisible(true);
-    // TODO: delete network by name
   };
 
   return (
     <div className="scrollable" style={{ width: "100%" }}>
-      <Loader show={false}/>
+      <Loader show={isLoading}/>
       <MDialog
-        title={networkName}
-        description={`Do you really want to delete ${networkName}?`}
+        title={networkSsid}
+        description={`Do you really want to delete ${networkSsid}?`}
         show={dialogVisible}
         hide={() => setDialogVisible(false)}
-        buttons={[{ label: "Cancel" }, { label: "DELETE", warning: true }]}
+        buttons={[{ label: "Cancel"}, { label: "DELETE", warning: true, onClick: () => {
+          // TODO:
+          // remove by name
+          // networkName
+          // setIsLoading(true)
+        } }]}
       />
       {networks.map((network) => (
         <SavedNetworkItem
