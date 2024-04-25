@@ -25,6 +25,7 @@ body {
   align-items: center;
   flex: 1;
   overflow: hidden;
+  outline: none;
 }
 
 .deleteButton {

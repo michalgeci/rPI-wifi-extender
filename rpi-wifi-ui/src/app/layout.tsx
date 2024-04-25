@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import "antd-mobile/bundle/css-vars-patch.css"
-import "antd-mobile/bundle/style.css"
 import "./globals.css";
 import Footer from "@/components/Footer";
 
