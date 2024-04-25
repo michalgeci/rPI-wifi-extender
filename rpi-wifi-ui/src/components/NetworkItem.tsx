@@ -9,11 +9,16 @@ import {
   MdSignalWifi4BarLock,
 } from "react-icons/md";
 
-type NetworkInfo = {
+export type NetworkInfo = {
   name: string;
   secured: boolean;
   signal: number;
   inUse: boolean;
+};
+
+type NetworkInfoProps = {
+  network: NetworkInfo;
+  onClick: (network: NetworkInfo) => void;
 };
 
 const WifiSignal = ({
@@ -47,10 +52,10 @@ const WifiSignal = ({
   }
 };
 
-export const NetworkItem = ({ name, secured, signal, inUse }: NetworkInfo) => (
+export const NetworkItem = ({ network, onClick }: NetworkInfoProps) => (
   <div
     style={{
-      backgroundColor: inUse ? "#bae0ff" : "transparent",
+      backgroundColor: network.inUse ? "#bae0ff" : "transparent",
     }}
   >
     <div
@@ -62,9 +67,9 @@ export const NetworkItem = ({ name, secured, signal, inUse }: NetworkInfo) => (
         justifyContent: "space-between",
         paddingLeft: 16,
       }}
-      onClick={() => {}}
+      onClick={() => onClick(network)}
     >
-      <WifiSignal secured={secured} signal={signal} />
+      <WifiSignal secured={network.secured} signal={network.signal} />
 
       <p
         style={{
@@ -76,7 +81,7 @@ export const NetworkItem = ({ name, secured, signal, inUse }: NetworkInfo) => (
           flex: 1,
         }}
       >
-        {name}
+        {network.name}
       </p>
     </div>
 
