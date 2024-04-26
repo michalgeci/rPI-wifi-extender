@@ -2,6 +2,8 @@
 import { HeaderButton } from "@/components/HeaderButton";
 import { Loader } from "@/components/Loader";
 import { NetworkInfo, NetworkItem } from "@/components/NetworkItem";
+import { WifiDialog } from "@/components/WifiDialog";
+import { useState } from "react";
 import { TbPlus, TbRefresh } from "react-icons/tb";
 
 export default function Home() {
@@ -20,27 +22,66 @@ export default function Home() {
     },
   ];
 
+  const [wifiDialogVisible, setWifiDialogVisible] = useState(false);
+  const [connectToHiddenWifi, setConnectToHiddenWifi] = useState(false);
+
   const networkClicked = (network: NetworkInfo) => {
     console.log(network);
     if (network.inUse) {
-      return
+      return;
     }
+
+    setConnectToHiddenWifi(false);
 
     if (!network.secured) {
       // TODO: Connect directly
     } else {
-      // TODO: Ask for password
+      setWifiDialogVisible(true);
     }
   };
 
   return (
     <div style={{ width: "100%" }}>
       {/* Header buttons */}
-      <HeaderButton text="Add Hidden Network" icon={<TbPlus size={24} />} />
-      <HeaderButton text="Refresh" icon={<TbRefresh size={24} />} />
+      <HeaderButton
+        text="Add Hidden Network"
+        onClick={() => {
+          setConnectToHiddenWifi(true);
+          setWifiDialogVisible(true);
+        }}
+        icon={<TbPlus size={24} />}
+      />
+      <HeaderButton
+        onClick={() => {
+          // TODO: refresh list
+        }}
+        text="Refresh"
+        icon={<TbRefresh size={24} />}
+      />
 
       {/* LOADER */}
       <Loader show={false} />
+
+      {/* WIFI DIALOG */}
+      <WifiDialog
+        show={wifiDialogVisible}
+        hide={() => setWifiDialogVisible(false)}
+        hiddenWifi={connectToHiddenWifi}
+        onConnect={(ssid, password) => {
+          console.log(ssid, password);
+
+          // TODO: Handle connection
+          if (ssid && password) {
+            // Secured, hidden
+          } else if (ssid && !password) {
+            // Unsecured, hidden
+          } else if (!ssid && password) {
+            // Secured, visible
+          } else {
+            alert("ERROR DATA");
+          }
+        }}
+      />
 
       {/* LIST OF NETWORKS */}
       <div className="scrollable">
