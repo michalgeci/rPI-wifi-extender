@@ -2,13 +2,11 @@ import { TbTrash } from "react-icons/tb";
 
 type SavedNetworkItemProps = {
   name: string;
-  ssid: string;
-  onClick?: (name: string, ssid: string) => void;
+  onClick?: (name: string) => void;
 };
 
 export const SavedNetworkItem = ({
   name,
-  ssid,
   onClick = () => {},
 }: SavedNetworkItemProps) => (
   <div>
@@ -20,11 +18,11 @@ export const SavedNetworkItem = ({
         justifyContent: "space-between",
       }}
     >
-      <p style={{ padding: 16, fontSize: 24, margin: 0, flex: 1 }}>{ssid}</p>
+      <p style={{ padding: 16, fontSize: 24, margin: 0, flex: 1 }}>{name}</p>
       <div
         style={{ width: 64, height: 64 }}
         onClick={() => {
-          onClick(name, ssid);
+          onClick(name);
         }}
       >
         <TbTrash

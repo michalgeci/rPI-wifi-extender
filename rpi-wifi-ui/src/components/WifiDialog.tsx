@@ -42,6 +42,7 @@ export function WifiDialog({
           style={styles.inputStyle}
           type={showPassword ? "text" : "password"}
           placeholder="Password"
+          autoComplete="new-password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
