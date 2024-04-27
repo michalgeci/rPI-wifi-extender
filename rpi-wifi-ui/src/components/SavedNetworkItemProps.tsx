@@ -11,7 +11,7 @@ export const SavedNetworkItem = ({
   ssid,
   onClick = () => {},
 }: SavedNetworkItemProps) => (
-  <div style={{ width: "100%" }}>
+  <div>
     <div
       style={{
         display: "flex",

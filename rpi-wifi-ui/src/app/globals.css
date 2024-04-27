@@ -18,13 +18,20 @@ body {
 .scrollable {
   overflow: scroll;
   outline: none;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollable::-webkit-scrollbar {
+  display: none;
 }
 
 .mainContainer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
   flex: 1;
   overflow: hidden;
 }

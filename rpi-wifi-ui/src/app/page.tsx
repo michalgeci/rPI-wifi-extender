@@ -20,6 +20,54 @@ export default function Home() {
       signal: 33,
       inUse: true,
     },
+    {
+      name: "Nazov2 asdas asd asd as s sadasd asdas dasd a",
+      secured: false,
+      signal: 33,
+      inUse: false,
+    },
+    {
+      name: "Nazov2 asdas asd asd as s sadasd asdas dasd a",
+      secured: false,
+      signal: 33,
+      inUse: false,
+    },
+    {
+      name: "Nazov2 asdas asd asd as s sadasd asdas dasd a",
+      secured: false,
+      signal: 33,
+      inUse: false,
+    },
+    {
+      name: "Nazov2 asdas asd asd as s sadasd asdas dasd a",
+      secured: false,
+      signal: 33,
+      inUse: false,
+    },
+    {
+      name: "Nazov2 asdas asd asd as s sadasd asdas dasd a",
+      secured: false,
+      signal: 33,
+      inUse: false,
+    },
+    {
+      name: "Nazov2 asdas asd asd as s sadasd asdas dasd a",
+      secured: false,
+      signal: 33,
+      inUse: false,
+    },
+    {
+      name: "Nazov2 asdas asd asd as s sadasd asdas dasd a",
+      secured: false,
+      signal: 33,
+      inUse: false,
+    },
+    {
+      name: "Nazov2 asdas asd asd as s sadasd asdas dasd a",
+      secured: false,
+      signal: 33,
+      inUse: false,
+    },
   ];
 
   const [wifiDialogVisible, setWifiDialogVisible] = useState(false);
@@ -41,7 +89,7 @@ export default function Home() {
   };
 
   return (
-    <div style={{ width: "100%" }}>
+    <div className="mainContainer">
       {/* Header buttons */}
       <HeaderButton
         text="Add Hidden Network"
