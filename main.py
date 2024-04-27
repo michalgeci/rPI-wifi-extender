@@ -32,9 +32,9 @@ def test_post():
     return json.dumps({'success':True}), 200, {'ContentType':'application/json'} 
 
 
-# if __name__ == "__main__":
-#     app.run(debug=True, host='0.0.0.0')
-
 if __name__ == "__main__":
-    from waitress import serve
-    serve(app, host="0.0.0.0", port=8080)
+    app.run(debug=True, host='0.0.0.0')
+
+# if __name__ == "__main__":
+#     from waitress import serve
+#     serve(app, host="0.0.0.0", port=8080)

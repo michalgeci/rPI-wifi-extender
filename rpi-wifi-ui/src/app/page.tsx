@@ -89,7 +89,7 @@ export default function Home() {
   };
 
   return (
-    <div className="mainContainer">
+    <div className="secondaryContainer">
       {/* Header buttons */}
       <HeaderButton
         text="Add Hidden Network"
